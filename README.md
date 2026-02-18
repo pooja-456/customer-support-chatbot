@@ -13,17 +13,20 @@ It uses pattern matching and keyword-based logic to generate responses and simul
 - Chat statistics display
 - Multi-threaded response handling for smooth UI experience
 - Help and Clear Chat functionality
-
 ## Project Structure
-Chatbot_Task4/
+
+```
+customer-support-chatbot/
 │
-├── main.py              # Application entry point
+├── main.py                 # Application entry point
 ├── chatbot/
-│   ├── core.py          # Response matching and chatbot logic
-│   ├── data.py          # Response patterns and categories
-│   ├── ui.py            # Graphical user interface
-│   ├── utils.py         # Helper utilities
-│   └── __init__.py
+│   ├── __init__.py
+│   ├── core.py             # Response matching and chatbot logic
+│   ├── data.py             # Response patterns and categories
+│   ├── ui.py               # Graphical user interface (Tkinter)
+│   └── utils.py            # Helper utilities
+└── .gitignore
+```
 
 ## How It Works
 1. User enters a message in the GUI.
