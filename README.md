@@ -1,55 +1,75 @@
-# Customer Support Chatbot
+# Hiver SDE Intern Take-Home: Trust-Aware Customer Support Agent
 
-## Overview
-This project is a desktop-based Customer Support Chatbot built using Python and Tkinter.  
-It uses pattern matching and keyword-based logic to generate responses and simulate customer support conversations.
+This project upgrades an existing Rule-Based Chatbot into a **Trust-Aware AI Pipeline** that classifies customer intents, retrieves historical precedent, extracts actions, and explicitly decides whether to `AUTO_HANDLE` or `ESCALATE` the request based on measurable confidence and evidence.
 
-## Features
-- Desktop GUI built with Tkinter
-- Pattern-based response matching
-- Fuzzy word similarity handling (typo tolerance)
-- Keyword-based category fallback (Account, Billing, Technical, General)
-- Conversation history tracking
-- Chat statistics display
-- Multi-threaded response handling for smooth UI experience
-- Help and Clear Chat functionality
-## Project Structure
+## Architecture
+`Query -> Intent (LR) -> Retrieval (TF-IDF) -> Extraction (Regex) -> Trust Layer -> Generation`
 
-```
-customer-support-chatbot/
-│
-├── main.py                 # Application entry point
-├── chatbot/
-│   ├── __init__.py
-│   ├── core.py             # Response matching and chatbot logic
-│   ├── data.py             # Response patterns and categories
-│   ├── ui.py               # Graphical user interface (Tkinter)
-│   └── utils.py            # Helper utilities
-└── .gitignore
+## Requirements
+- Python 3.9+
+- `pandas`, `numpy`, `scikit-learn`, `joblib`
+- (Optional) `google-generativeai` or `openai` for LLM experiments.
+
+## Installation
+```bash
+pip install pandas numpy scikit-learn joblib
 ```
 
-## How It Works
-1. User enters a message in the GUI.
-2. Input is preprocessed (lowercased, cleaned).
-3. Pattern similarity scoring is applied.
-4. Best matching response is selected.
-5. If no strong match is found, keyword-based fallback logic is used.
-6. Conversation is stored for statistics tracking.
+## Dataset Setup
+The AppleSupport interaction dataset splits and models are already precomputed and located in `data/splits/` and `baselines/`. No data downloading is required to run the evaluations.
 
-## Matching Logic
-- Direct word matching
-- Similarity scoring using difflib (80% threshold)
-- Keyword variation detection
-- Category-based fallback responses
+## How to Run Core Reproducible Evaluations
+All scripts are located in the `evaluation/` folder.
 
-## Technologies Used
-- Python
-- Tkinter
-- Regular Expressions (re)
-- difflib (SequenceMatcher)
-- Threading
+**1. Golden Set Trust-Aware Pipeline Evaluation (Stage 5)**
+Runs the 200 Golden Set examples through the Trust Layer.
+```bash
+python evaluation/stage5_evaluate.py
+```
+*Outputs: `stage5_report.md`, `golden_predictions.csv`*
 
-## Future Improvements
-- Replace rule-based matching with ML-based intent classification
-- Add database logging
-- Convert to web-based deployment
+**2. Response Quality Evaluation (Stage 6)**
+Evaluates the deterministic fallback generator against the rubric.
+```bash
+python evaluation/stage6_evaluate.py
+```
+*Outputs: `stage6_response_report.md`, `response_quality_predictions.csv`*
+
+## Expected Headline Numbers
+
+**MEASURED:**
+- Intent Classification Accuracy: 98.00% (Baseline 2 / Stage 5)
+- Auto-Handle Rate: 57.0%
+- False Automation Proxy Rate: 6.0% (Proxy-based trust evaluation)
+- Deterministic Template Construction Safety: Does not dynamically generate novel claims (construction property, not a semantic hallucination score).
+
+**NOT MEASURED:**
+- Human semantic response quality (Relevance, Grounding, Actionability, Tone)
+- Human/LLM judge agreement
+- Empirical LLM generation quality
+
+## Test Command
+To verify pipeline integrity, run the test suite:
+```bash
+python tests/test_stage4_pipeline.py
+python tests/test_stage6_generation.py
+python tests/test_stage7_llm_generation.py
+```
+
+## OPTIONAL: LLM Setup
+An LLM generator experiment is fully implemented behind the `BaseGenerator` interface. To run it, simply export an API key:
+```bash
+export OPENAI_API_KEY="your-key"
+# or
+export GEMINI_API_KEY="your-key"
+```
+Then run the Stage 7 evaluation:
+```bash
+python evaluation/stage7_llm_evaluate.py
+```
+*(If no key is exported, the pipeline gracefully falls back to deterministic generation and logs that the experiment was bypassed).*
+
+## Known Limitations
+- Generates unresolvable `t.co` links.
+- Trust thresholds (0.35 similarity, 0.60 consistency) are heuristic.
+- High-risk policy unconditionally escalates all billing queries.

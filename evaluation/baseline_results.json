@@ -1,0 +1,406 @@
+{
+  "evaluation_timestamp": "2026-09-17 15:12:27",
+  "target_intents": [
+    "BATTERY_AND_POWER",
+    "SOFTWARE_OS_UPDATE",
+    "ACCOUNT_AND_SECURITY",
+    "BILLING_AND_SUBSCRIPTIONS",
+    "CONNECTIVITY_AND_SYNC",
+    "HARDWARE_AND_AUDIO_SCREEN",
+    "GENERAL_CHITCHAT_OR_FEEDBACK"
+  ],
+  "golden_set_sample_count": 200,
+  "test_set_sample_count": 15587,
+  "baseline_1_legacy_rules": {
+    "description": "Legacy difflib fuzzy matching + static SaaS keywords from Chatbot_Task4",
+    "golden_accuracy": 0.22,
+    "golden_macro_f1": 0.1286,
+    "golden_per_intent": {
+      "BATTERY_AND_POWER": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 30.0
+      },
+      "SOFTWARE_OS_UPDATE": {
+        "precision": 0.2676,
+        "recall": 0.4222,
+        "f1-score": 0.3276,
+        "support": 45.0
+      },
+      "ACCOUNT_AND_SECURITY": {
+        "precision": 0.1622,
+        "recall": 0.3,
+        "f1-score": 0.2105,
+        "support": 20.0
+      },
+      "BILLING_AND_SUBSCRIPTIONS": {
+        "precision": 0.0625,
+        "recall": 0.0667,
+        "f1-score": 0.0645,
+        "support": 15.0
+      },
+      "CONNECTIVITY_AND_SYNC": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 25.0
+      },
+      "HARDWARE_AND_AUDIO_SCREEN": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 20.0
+      },
+      "GENERAL_CHITCHAT_OR_FEEDBACK": {
+        "precision": 0.2368,
+        "recall": 0.4,
+        "f1-score": 0.2975,
+        "support": 45.0
+      }
+    },
+    "golden_confusion_matrix": [
+      [
+        0,
+        8,
+        6,
+        0,
+        0,
+        0,
+        16
+      ],
+      [
+        0,
+        19,
+        10,
+        3,
+        0,
+        0,
+        13
+      ],
+      [
+        0,
+        7,
+        6,
+        0,
+        0,
+        0,
+        7
+      ],
+      [
+        0,
+        4,
+        3,
+        1,
+        0,
+        0,
+        7
+      ],
+      [
+        0,
+        10,
+        3,
+        3,
+        0,
+        0,
+        9
+      ],
+      [
+        0,
+        12,
+        0,
+        2,
+        0,
+        0,
+        6
+      ],
+      [
+        0,
+        11,
+        9,
+        7,
+        0,
+        0,
+        18
+      ]
+    ]
+  },
+  "baseline_2_tfidf_logistic_regression": {
+    "description": "TfidfVectorizer(ngram_range=(1,2), max_features=15000) + LogisticRegression(class_weight=balanced)",
+    "val_accuracy": 0.984,
+    "val_macro_f1": 0.9737,
+    "test_accuracy": 0.9851,
+    "test_macro_f1": 0.9739,
+    "golden_accuracy": 0.98,
+    "golden_macro_f1": 0.9771,
+    "golden_per_intent": {
+      "BATTERY_AND_POWER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      },
+      "SOFTWARE_OS_UPDATE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 45.0
+      },
+      "ACCOUNT_AND_SECURITY": {
+        "precision": 1.0,
+        "recall": 0.95,
+        "f1-score": 0.9744,
+        "support": 20.0
+      },
+      "BILLING_AND_SUBSCRIPTIONS": {
+        "precision": 1.0,
+        "recall": 0.8667,
+        "f1-score": 0.9286,
+        "support": 15.0
+      },
+      "CONNECTIVITY_AND_SYNC": {
+        "precision": 1.0,
+        "recall": 0.96,
+        "f1-score": 0.9796,
+        "support": 25.0
+      },
+      "HARDWARE_AND_AUDIO_SCREEN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 20.0
+      },
+      "GENERAL_CHITCHAT_OR_FEEDBACK": {
+        "precision": 0.9184,
+        "recall": 1.0,
+        "f1-score": 0.9574,
+        "support": 45.0
+      }
+    },
+    "golden_confusion_matrix": [
+      [
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        45,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        19,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        13,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        24,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45
+      ]
+    ],
+    "test_per_intent": {
+      "BATTERY_AND_POWER": {
+        "precision": 0.9937,
+        "recall": 0.9582,
+        "f1-score": 0.9756,
+        "support": 1317.0
+      },
+      "SOFTWARE_OS_UPDATE": {
+        "precision": 0.9888,
+        "recall": 0.9844,
+        "f1-score": 0.9866,
+        "support": 4218.0
+      },
+      "ACCOUNT_AND_SECURITY": {
+        "precision": 0.9844,
+        "recall": 0.9504,
+        "f1-score": 0.9671,
+        "support": 665.0
+      },
+      "BILLING_AND_SUBSCRIPTIONS": {
+        "precision": 0.9853,
+        "recall": 0.9475,
+        "f1-score": 0.966,
+        "support": 495.0
+      },
+      "CONNECTIVITY_AND_SYNC": {
+        "precision": 0.9651,
+        "recall": 0.9739,
+        "f1-score": 0.9695,
+        "support": 995.0
+      },
+      "HARDWARE_AND_AUDIO_SCREEN": {
+        "precision": 0.9421,
+        "recall": 0.9763,
+        "f1-score": 0.9589,
+        "support": 717.0
+      },
+      "GENERAL_CHITCHAT_OR_FEEDBACK": {
+        "precision": 0.9887,
+        "recall": 0.9987,
+        "f1-score": 0.9937,
+        "support": 7180.0
+      }
+    },
+    "test_confusion_matrix": [
+      [
+        1262,
+        16,
+        0,
+        0,
+        16,
+        12,
+        11
+      ],
+      [
+        0,
+        4152,
+        2,
+        6,
+        1,
+        5,
+        52
+      ],
+      [
+        1,
+        7,
+        632,
+        0,
+        11,
+        9,
+        5
+      ],
+      [
+        6,
+        3,
+        5,
+        469,
+        3,
+        5,
+        4
+      ],
+      [
+        0,
+        9,
+        0,
+        1,
+        969,
+        11,
+        5
+      ],
+      [
+        0,
+        11,
+        0,
+        0,
+        1,
+        700,
+        5
+      ],
+      [
+        1,
+        1,
+        3,
+        0,
+        3,
+        1,
+        7171
+      ]
+    ]
+  },
+  "baseline_2b_tfidf_linearsvc": {
+    "description": "TfidfVectorizer(ngram_range=(1,2), max_features=15000) + LinearSVC(class_weight=balanced)",
+    "val_accuracy": 0.9926,
+    "val_macro_f1": 0.9863,
+    "golden_accuracy": 0.99,
+    "golden_macro_f1": 0.9883,
+    "golden_per_intent": {
+      "BATTERY_AND_POWER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      },
+      "SOFTWARE_OS_UPDATE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 45.0
+      },
+      "ACCOUNT_AND_SECURITY": {
+        "precision": 1.0,
+        "recall": 0.95,
+        "f1-score": 0.9744,
+        "support": 20.0
+      },
+      "BILLING_AND_SUBSCRIPTIONS": {
+        "precision": 1.0,
+        "recall": 0.9333,
+        "f1-score": 0.9655,
+        "support": 15.0
+      },
+      "CONNECTIVITY_AND_SYNC": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "HARDWARE_AND_AUDIO_SCREEN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 20.0
+      },
+      "GENERAL_CHITCHAT_OR_FEEDBACK": {
+        "precision": 0.9574,
+        "recall": 1.0,
+        "f1-score": 0.9783,
+        "support": 45.0
+      }
+    }
+  }
+}

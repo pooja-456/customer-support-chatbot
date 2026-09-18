@@ -1,0 +1,203 @@
+{
+  "total_interactions": 104405,
+  "turn_counts": {
+    "2_turns (Initial Q&A)": 74535,
+    "3+_turns (Follow-up Thread)": 29870
+  },
+  "length_stats": {
+    "customer_char_length": {
+      "mean": 97.2,
+      "median": 95.0,
+      "p25": 61.0,
+      "p75": 124.0,
+      "p95": 194.0
+    },
+    "customer_word_length": {
+      "mean": 18.0,
+      "median": 17.0,
+      "p25": 11.0,
+      "p75": 23.0,
+      "p95": 36.0
+    },
+    "brand_word_length": {
+      "mean": 21.8,
+      "median": 20.0,
+      "p25": 17.0,
+      "p75": 24.0,
+      "p95": 39.0
+    }
+  },
+  "resolution_stats": {
+    "total_interactions": 104405,
+    "brand_provides_official_apple_url": 0,
+    "brand_provides_official_apple_url_pct": 0.0,
+    "brand_provides_any_url": 78861,
+    "brand_provides_any_url_pct": 75.53,
+    "brand_guides_through_settings": 4451,
+    "brand_guides_through_settings_pct": 4.26,
+    "brand_recommends_restart": 3106,
+    "brand_recommends_restart_pct": 2.97,
+    "brand_requests_dm_or_private_info": 54886,
+    "brand_requests_dm_or_private_info_pct": 52.57,
+    "pure_dm_deflection_without_guidance": 1611,
+    "pure_dm_deflection_without_guidance_pct": 1.54,
+    "actionable_resolution_pct": 98.46
+  },
+  "risk_stats": {
+    "billing_unauthorized_fraud_charges": 449,
+    "billing_unauthorized_pct": 0.43,
+    "account_disabled_or_activation_lock": 202,
+    "account_lockout_pct": 0.19,
+    "legal_threats_or_regulatory_action": 5910,
+    "legal_threats_pct": 5.66,
+    "high_frustration_escalation_triggers": 1073,
+    "high_frustration_pct": 1.03,
+    "total_high_risk_candidates": 7634
+  },
+  "top_bigrams": [
+    [
+      "https co",
+      4618
+    ],
+    [
+      "new update",
+      658
+    ],
+    [
+      "ios update",
+      647
+    ],
+    [
+      "please fix",
+      617
+    ],
+    [
+      "battery life",
+      500
+    ],
+    [
+      "question mark",
+      453
+    ],
+    [
+      "new ios",
+      393
+    ],
+    [
+      "please help",
+      367
+    ],
+    [
+      "ever since",
+      365
+    ],
+    [
+      "doesn work",
+      326
+    ],
+    [
+      "fix shit",
+      323
+    ],
+    [
+      "updated ios",
+      276
+    ],
+    [
+      "turn off",
+      240
+    ],
+    [
+      "high sierra",
+      236
+    ],
+    [
+      "since updated",
+      235
+    ],
+    [
+      "anyone else",
+      234
+    ],
+    [
+      "latest update",
+      224
+    ],
+    [
+      "app store",
+      210
+    ],
+    [
+      "need fix",
+      203
+    ],
+    [
+      "since update",
+      199
+    ]
+  ],
+  "top_trigrams": [
+    [
+      "help https co",
+      183
+    ],
+    [
+      "fix https co",
+      144
+    ],
+    [
+      "new ios update",
+      143
+    ],
+    [
+      "question mark box",
+      120
+    ],
+    [
+      "ever since updated",
+      112
+    ],
+    [
+      "ios https co",
+      78
+    ],
+    [
+      "latest ios update",
+      78
+    ],
+    [
+      "anyone else having",
+      72
+    ],
+    [
+      "wtf https co",
+      66
+    ],
+    [
+      "update https co",
+      66
+    ],
+    [
+      "since new update",
+      56
+    ],
+    [
+      "since updated ios",
+      56
+    ],
+    [
+      "thanks https co",
+      55
+    ],
+    [
+      "since ios update",
+      53
+    ],
+    [
+      "shit https co",
+      52
+    ]
+  ],
+  "ambiguous_overlapping_count": 22341,
+  "ambiguous_overlapping_pct": 21.4
+}

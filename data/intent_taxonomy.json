@@ -1,0 +1,517 @@
+{
+  "BATTERY_AND_POWER": {
+    "intent_name": "BATTERY_AND_POWER",
+    "plain_language_definition": "Inquiries regarding device battery life, rapid battery depletion, overheating, charging cable/port failures, and unexpected device shutdowns.",
+    "example_count": 10740,
+    "dataset_percentage": 10.29,
+    "distinguishing_boundary": "Distinguished from HARDWARE by focusing specifically on energy storage, charging speed, and thermal/battery health. Distinguished from SOFTWARE by physical power retention rather than OS crashes.",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 745,
+        "brand_tweet_id": 744,
+        "customer_query": "I need the software update urgently. The battery lasts literally half a day 🙍🏼🙁",
+        "brand_response": "Hi there! What type of device are we working with?",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 767,
+        "brand_tweet_id": 766,
+        "customer_query": "I just need to do something about the battery life because it sucks ass",
+        "brand_response": "We want to help you get your battery life back on track. Please DM and we'll look at it together. https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 1761,
+        "brand_tweet_id": 1760,
+        "customer_query": "iOS 11 is killing my battery . Fix it.",
+        "brand_response": "We're here to help. Which exact iOS version is your device running? This info can be found under Settings &gt; General &gt; About.",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 1775,
+        "brand_tweet_id": 1777,
+        "customer_query": "Battery life just got worst.",
+        "brand_response": "We'll make sure to get this straightened out. DM us, and we'll see you there. https://t.co/GDrqU22YpT",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 2616,
+        "brand_tweet_id": 2614,
+        "customer_query": "why is my battery life short? I updated to 11.1, my battery is poor. Wife didn’t she likes her battery life",
+        "brand_response": "Let’s work together on this situation. To clarify, did this start after updating to iOS 11.1? Also, which device are you using?",
+        "is_initial_turn": true
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 745,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "SOFTWARE_OS_UPDATE"
+        ],
+        "customer_query": "I need the software update urgently. The battery lasts literally half a day 🙍🏼🙁",
+        "brand_reply": "Hi there! What type of device are we working with?"
+      },
+      {
+        "customer_tweet_id": 767,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "I just need to do something about the battery life because it sucks ass",
+        "brand_reply": "We want to help you get your battery life back on track. Please DM and we'll look at it together. https://t.co/GDrqU22YpT"
+      },
+      {
+        "customer_tweet_id": 1761,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "SOFTWARE_OS_UPDATE"
+        ],
+        "customer_query": "iOS 11 is killing my battery . Fix it.",
+        "brand_reply": "We're here to help. Which exact iOS version is your device running? This info can be found under Settings &gt; General &gt; About."
+      }
+    ]
+  },
+  "SOFTWARE_OS_UPDATE": {
+    "intent_name": "SOFTWARE_OS_UPDATE",
+    "plain_language_definition": "Issues resulting from iOS/macOS version updates, installation failures, app crashing, system freezing, boot loops, or software bugs.",
+    "example_count": 34062,
+    "dataset_percentage": 32.62,
+    "distinguishing_boundary": "Distinguished from HARDWARE by bugs occurring specifically post-update or within software applications. Distinguished from BATTERY by system functionality (freezing, UI bugs) rather than power drain.",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 697,
+        "brand_tweet_id": 699,
+        "customer_query": "The newest update. I️ made sure to download it yesterday.",
+        "brand_response": "Lets take a closer look into this issue. Select the following link to join us in a DM and we'll go from there. https://t.co/GDrqU22YpT",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 714,
+        "brand_tweet_id": 712,
+        "customer_query": "Hey and anyone else who upgraded to ios11.1, are y’all having issues with capital “I️” in the Mail app? As it puts in “A”?",
+        "brand_response": "Hey, let's work together to figure out what's going on. Meet us in DM and we'll continue from there. https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 736,
+        "brand_tweet_id": 734,
+        "customer_query": "Thank you I updated my phone and now it is even slower and barely works. Thank you for ruining my phone.😤",
+        "brand_response": "We'd like to help, but we'll need more details. What's happening on your device and which model is it? Do you have iOS 11.1?",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 735,
+        "brand_tweet_id": 737,
+        "customer_query": "I have the iPhone 6s Plus and just did the most recent update.",
+        "brand_response": "To make sure, is iOS 11.1 installed on it currently? Also, any steps tried so far? DM us here: https://t.co/GDrqU22YpT",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 739,
+        "brand_tweet_id": 741,
+        "customer_query": "iOS 11.0.3",
+        "brand_response": "Let's check Settings &gt; General &gt; Software Update. iOS 11.1 was released earlier today. If you see it, please backup &amp; update.",
+        "is_initial_turn": false
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 714,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Hey and anyone else who upgraded to ios11.1, are y’all having issues with capital “I️” in the Mail app? As it puts in “A”?",
+        "brand_reply": "Hey, let's work together to figure out what's going on. Meet us in DM and we'll continue from there. https://t.co/GDrqU22YpT"
+      },
+      {
+        "customer_tweet_id": 736,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Thank you I updated my phone and now it is even slower and barely works. Thank you for ruining my phone.😤",
+        "brand_reply": "We'd like to help, but we'll need more details. What's happening on your device and which model is it? Do you have iOS 11.1?"
+      },
+      {
+        "customer_tweet_id": 745,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "SOFTWARE_OS_UPDATE"
+        ],
+        "customer_query": "I need the software update urgently. The battery lasts literally half a day 🙍🏼🙁",
+        "brand_reply": "Hi there! What type of device are we working with?"
+      }
+    ]
+  },
+  "ACCOUNT_AND_SECURITY": {
+    "intent_name": "ACCOUNT_AND_SECURITY",
+    "plain_language_definition": "Account authentication problems, forgotten Apple ID passwords, disabled accounts, two-factor authentication (2FA) codes, iCloud sync credentials, and Activation Lock.",
+    "example_count": 3243,
+    "dataset_percentage": 3.11,
+    "distinguishing_boundary": "Distinguished from BILLING by focusing on access/identity (passwords, 2FA, Apple ID lock) rather than financial transactions.",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 1764,
+        "brand_tweet_id": 1762,
+        "customer_query": "Hello, I need some help regarding the region change on my Apple ID",
+        "brand_response": "This article should help with that: https://t.co/usOJWy6ChP",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 5819,
+        "brand_tweet_id": 5817,
+        "customer_query": "I can’t change lock screen anymore from ‘wallpaper’ in settings. How do I do it now?",
+        "brand_response": "We'd be happy to help. Check out this link to for more information: https://t.co/hSnkM7JIIS",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 8297,
+        "brand_tweet_id": 8296,
+        "customer_query": "Hello there i need help with the use of an administartors name and password on my imac",
+        "brand_response": "Hi! We're happy to help. Join us in DM with the macOS version installed on your iMac and more details about what's going on. https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 8437,
+        "brand_tweet_id": 8434,
+        "customer_query": "suck! Upgrade phone &amp; I lose my Apple ID. Can’t get new id without old &amp; can’t book Genius bar help appointment without ID!!! #stupid",
+        "brand_response": "We're happy you reached out so we can find you the info you need. If you forgot your Apple ID, go to the Apple ID account page: https://t.co/ggVDoc1mU7 From here, click \"Forgot Apple ID or password?\" then click \"look it up.\" From here, follow the on screen prompts.",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 8551,
+        "brand_tweet_id": 8549,
+        "customer_query": "ya.lately my screen was disfunction for touch after its been restart. i couldnt enter passcode yet homebutton still figureout my fingerprint",
+        "brand_response": "For security, the passcode is always required even if you have Touch ID turned on. Are you still having touch screen issues?",
+        "is_initial_turn": false
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 765,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "ACCOUNT_AND_SECURITY",
+          "HARDWARE_AND_AUDIO_SCREEN"
+        ],
+        "customer_query": "After update #ios1103 no spotify on my lock screen?",
+        "brand_reply": "Thanks for reaching out to us. Are you experiencing the missing app after restating your device?"
+      },
+      {
+        "customer_tweet_id": 1764,
+        "competing_intents": [
+          "ACCOUNT_AND_SECURITY",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Hello, I need some help regarding the region change on my Apple ID",
+        "brand_reply": "This article should help with that: https://t.co/usOJWy6ChP"
+      },
+      {
+        "customer_tweet_id": 2635,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "ACCOUNT_AND_SECURITY"
+        ],
+        "customer_query": "Just updated iOS on iPhone7, now iCloud backup greyed out, cannot be turned on, says “Last Backup Never”",
+        "brand_reply": "Check out this link: https://t.co/Lr8zUtw9ls Send us a DM if it doesn't help. https://t.co/GDrqU22YpT"
+      }
+    ]
+  },
+  "BILLING_AND_SUBSCRIPTIONS": {
+    "intent_name": "BILLING_AND_SUBSCRIPTIONS",
+    "plain_language_definition": "Inquiries concerning App Store or iTunes charges, unexpected renewals, subscription cancellations, refund requests, and payment method updates.",
+    "example_count": 1260,
+    "dataset_percentage": 1.21,
+    "distinguishing_boundary": "Distinguished from ACCOUNT by focusing explicitly on monetary charges, card details, subscription cycles, and refund demands.",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 2638,
+        "brand_tweet_id": 2636,
+        "customer_query": "...cost for sending in for diagnosing a problem if it's out of warranty?",
+        "brand_response": "We can help. Let’s start with the following steps to see if we can save you a trip in for service: https://t.co/RqWW0duJ0U",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 14324,
+        "brand_tweet_id": 14323,
+        "customer_query": "just purchased iTunes movie on ATV in HD. Stops to buffer and stream every 5 minutes. Very unpleasant experience. Never had issues with movies. showing 30+ mbps DL🤷🏻‍♂️",
+        "brand_response": "We want to help with your Apple TV. Click here to reach our team that can assist with your Apple TV: https://t.co/IBIY3vMgPj",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 18872,
+        "brand_tweet_id": 18870,
+        "customer_query": "the screen on our iPad Pro has stopped working 😔. I've read a few articles about weak screens on some models - is there anywhere I can check the model number, or will it be a £400 repair bill? Thanks",
+        "brand_response": "Thank you for reaching out to us. We'd be happy to try everything possible to provide the best support options. First, let's work as a team as we gather more information. DM us if you noticed any changes before the screen went black. What iOS is the device running? https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 23077,
+        "brand_tweet_id": 23076,
+        "customer_query": "ok not sure why this is happening but I need assistance charged my iPhone X (purchased yesterday) wirelessly and reached for it and this was on the screen, I could probably fry an egg https://t.co/WgADbE9263",
+        "brand_response": "We'll be happy to take a look into this with you. Could you please send us a DM with what country you're located in so we can get started? https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 23100,
+        "brand_tweet_id": 23098,
+        "customer_query": ", why do I keep getting charged over £20 for anything I buy from iTunes? Bought an album for £4.99 and got charged £20.67. Same thing happened a couple of weeks ago to. Why?! https://t.co/0fIDOKovNP",
+        "brand_response": "Our iTunes Store team would be happy to look into this with you. Reach out to them here: https://t.co/SDIe7UiyJN",
+        "is_initial_turn": true
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 2628,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "BILLING_AND_SUBSCRIPTIONS",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Question- my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?",
+        "brand_reply": "We know how important your battery is &amp; we'll be happy to help. Which iOS version are you using? Also, when did this issue begin?"
+      },
+      {
+        "customer_tweet_id": 4912,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "SOFTWARE_OS_UPDATE",
+          "BILLING_AND_SUBSCRIPTIONS"
+        ],
+        "customer_query": "Series1 #Applewatch would consistently get 18 hrs + per charge prior to last update. Now 12-13 hrs max.Died @ gym 2nite. Wtf ?",
+        "brand_reply": "We want your Apple Watch to keep up with you at the gym. To begin, which watchOS is installed?"
+      },
+      {
+        "customer_tweet_id": 8579,
+        "competing_intents": [
+          "BATTERY_AND_POWER",
+          "BILLING_AND_SUBSCRIPTIONS"
+        ],
+        "customer_query": "I bought 2 iPhones X on Friday, but I don’t see any charge on my credit card. Do I should worry or it’s normal?",
+        "brand_reply": "Thanks for reaching out to us. Please send us a DM with your country, and we'll look into this. https://t.co/GDrqU22YpT"
+      }
+    ]
+  },
+  "CONNECTIVITY_AND_SYNC": {
+    "intent_name": "CONNECTIVITY_AND_SYNC",
+    "plain_language_definition": "Troubleshooting network connectivity dropouts including Wi-Fi disconnection, Bluetooth pairing issues, cellular data reception, SIM card errors, and phone call failures.",
+    "example_count": 3963,
+    "dataset_percentage": 3.8,
+    "distinguishing_boundary": "Distinguished from HARDWARE by focusing on wireless transmission protocols (Wi-Fi, Bluetooth, Carrier/LTE) rather than physical component damage.",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 721,
+        "brand_tweet_id": 720,
+        "customer_query": "are the call centres closed for the night?",
+        "brand_response": "We've received your DM and will continue there.",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 2642,
+        "brand_tweet_id": 2641,
+        "customer_query": "still no reliable Bluetooth on my iPhone 8+.",
+        "brand_response": "Thanks for reaching out. DM which Bluetooth device you are trying to connect to so we can help. https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 2659,
+        "brand_tweet_id": 2658,
+        "customer_query": "Is anyone else having problems with there iPhone 7 saying no service?",
+        "brand_response": "We want to help with this. Let's start troubleshooting by trying the steps here: https://t.co/5KootZbxj1",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 4879,
+        "brand_tweet_id": 4878,
+        "customer_query": "I can’t download songs. Progress icon keeps spinning. On both data + WiFi. Stream works though. Can’t add songs to playlists. https://t.co/x7uUxSqO9u",
+        "brand_response": "We want to help. Does restarting help at all? DM us which iOS version you're on and we'll continue support there. https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 4906,
+        "brand_tweet_id": 4904,
+        "customer_query": "The ‘Overlapping url over TIME on Free WiFi hotspots’ remains. v11.0.3. Not a WiFi problem; two different hotspots shown. https://t.co/81ifcrDUeS",
+        "brand_response": "We'd like to have you backup and update your iPhone to iOS 11.1 and let us know if that helps: https://t.co/ahjigcvFRG",
+        "is_initial_turn": true
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 1783,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "CONNECTIVITY_AND_SYNC"
+        ],
+        "customer_query": "if my words even mean a thing to you; I am an iPhone 7 owner and have updated to your latest software and now am having the most dropped calls in history and glitch’s such as apps randomly opening and more ... #iHelp",
+        "brand_reply": "We want to help. Send us a DM letting us know if you are updated to iOS 11.1 https://t.co/GDrqU22YpT"
+      },
+      {
+        "customer_tweet_id": 2659,
+        "competing_intents": [
+          "CONNECTIVITY_AND_SYNC",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Is anyone else having problems with there iPhone 7 saying no service?",
+        "brand_reply": "We want to help with this. Let's start troubleshooting by trying the steps here: https://t.co/5KootZbxj1"
+      },
+      {
+        "customer_tweet_id": 4905,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "CONNECTIVITY_AND_SYNC"
+        ],
+        "customer_query": "I've updated to iOS 11.1 just now. I shall check out these WiFi hotspots tomorrow and later in the week.",
+        "brand_reply": "Sounds good. Let us know the results in DM and we'll continue working with you there. Thanks again. https://t.co/GDrqU22YpT"
+      }
+    ]
+  },
+  "HARDWARE_AND_AUDIO_SCREEN": {
+    "intent_name": "HARDWARE_AND_AUDIO_SCREEN",
+    "plain_language_definition": "Physical device defects including broken/unresponsive touchscreens, black display, camera malfunction, distorted speaker audio, or microphone defects.",
+    "example_count": 3036,
+    "dataset_percentage": 2.91,
+    "distinguishing_boundary": "Distinguished from CONNECTIVITY and SOFTWARE by localized hardware component failures (display glass, speaker cone, camera lens, physical buttons).",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 756,
+        "brand_tweet_id": 755,
+        "customer_query": "MY HOME BUTTON DOESN’T WORK #IOS11",
+        "brand_response": "Let us help with your Home button. Did this issue start right after iOS 11? Which version of iOS 11 are you running?",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 1773,
+        "brand_tweet_id": 1771,
+        "customer_query": "I just get a white screen and nothing loads. After a short time, it just closes/crashes. Thanks for the reply.",
+        "brand_response": "Which model do you have and is iOS 11.1 installed on it? Any steps tried so far?",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 1781,
+        "brand_tweet_id": 1780,
+        "customer_query": "why can’t I change ringer volume with the buttons? Whose dumb idea was it to change that and how do they still have a job?",
+        "brand_response": "Let us look into that. What device and OS version are you using?",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 2678,
+        "brand_tweet_id": 2677,
+        "customer_query": "Any idea why icons show up like this? I did force reset to no avail. After initial notification display, they show up. https://t.co/qBFIAlpGyD",
+        "brand_response": "We're here for you. DM us, and we'll look into this together. https://t.co/GDrqU22YpT",
+        "is_initial_turn": true
+      },
+      {
+        "customer_tweet_id": 4871,
+        "brand_tweet_id": 4869,
+        "customer_query": "Really considering getting a new kind of phone since my iPhone dies with 90% while using my camera 😤",
+        "brand_response": "We want to help! What model of iOS device are you using? Do you have the most recent version of iOS 11.1 downloaded?",
+        "is_initial_turn": true
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 765,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "ACCOUNT_AND_SECURITY",
+          "HARDWARE_AND_AUDIO_SCREEN"
+        ],
+        "customer_query": "After update #ios1103 no spotify on my lock screen?",
+        "brand_reply": "Thanks for reaching out to us. Are you experiencing the missing app after restating your device?"
+      },
+      {
+        "customer_tweet_id": 1773,
+        "competing_intents": [
+          "HARDWARE_AND_AUDIO_SCREEN",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "I just get a white screen and nothing loads. After a short time, it just closes/crashes. Thanks for the reply.",
+        "brand_reply": "Which model do you have and is iOS 11.1 installed on it? Any steps tried so far?"
+      },
+      {
+        "customer_tweet_id": 2682,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "HARDWARE_AND_AUDIO_SCREEN"
+        ],
+        "customer_query": "ios 11.0.3 on 6s. Cannot adjust alarm volume so waking up all in my house and neighbours despite ringer being set to minimum!",
+        "brand_reply": "We'd love to help with your alarm volume. Is the option to \"Change with Buttons\" disabled under Settings &gt; Sounds?"
+      }
+    ]
+  },
+  "GENERAL_CHITCHAT_OR_FEEDBACK": {
+    "intent_name": "GENERAL_CHITCHAT_OR_FEEDBACK",
+    "plain_language_definition": "High-level greetings, general brand praise or complaints, ambiguous short remarks without diagnostic details, and out-of-scope commentary.",
+    "example_count": 48101,
+    "dataset_percentage": 46.07,
+    "distinguishing_boundary": "Distinguished from all technical intents by the absence of actionable symptoms or device specifics.",
+    "representative_samples": [
+      {
+        "customer_tweet_id": 698,
+        "brand_tweet_id": 696,
+        "customer_query": "https://t.co/NV0yucs0lB",
+        "brand_response": "We're here for you. Which version of the iOS are you running? Check from Settings &gt; General &gt; About.",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 702,
+        "brand_tweet_id": 701,
+        "customer_query": "Tried resetting my settings .. restarting my phone .. all that",
+        "brand_response": "Let's go to DM for the next steps. DM us here: https://t.co/GDrqU22YpT",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 704,
+        "brand_tweet_id": 703,
+        "customer_query": "This is what it looks like https://t.co/XCQU2l4xUB",
+        "brand_response": "Any steps tried since it started last night?",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 707,
+        "brand_tweet_id": 705,
+        "customer_query": "I️ have an iPhone 7 Plus and yes I️ do",
+        "brand_response": "That's great it has iOS 11.1 as we can rule out being outdated. Any steps tried since this started? Do you recall when it started?",
+        "is_initial_turn": false
+      },
+      {
+        "customer_tweet_id": 709,
+        "brand_tweet_id": 708,
+        "customer_query": "I️ need answers because it’s annoying 🙃",
+        "brand_response": "We'd like to look into this with you. Which model do you have and is iOS 11.1 installed? Any steps tried so far?",
+        "is_initial_turn": false
+      }
+    ],
+    "ambiguous_overlapping_cases": [
+      {
+        "customer_tweet_id": 714,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Hey and anyone else who upgraded to ios11.1, are y’all having issues with capital “I️” in the Mail app? As it puts in “A”?",
+        "brand_reply": "Hey, let's work together to figure out what's going on. Meet us in DM and we'll continue from there. https://t.co/GDrqU22YpT"
+      },
+      {
+        "customer_tweet_id": 736,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Thank you I updated my phone and now it is even slower and barely works. Thank you for ruining my phone.😤",
+        "brand_reply": "We'd like to help, but we'll need more details. What's happening on your device and which model is it? Do you have iOS 11.1?"
+      },
+      {
+        "customer_tweet_id": 758,
+        "competing_intents": [
+          "SOFTWARE_OS_UPDATE",
+          "GENERAL_CHITCHAT_OR_FEEDBACK"
+        ],
+        "customer_query": "Hey ! Last time I downloaded an update my freaking phone gave me hell. Any recommendations?",
+        "brand_reply": "We're here to help. Meet us in DM and we can check on available options. https://t.co/GDrqU22YpT"
+      }
+    ]
+  }
+}

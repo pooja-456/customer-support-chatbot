@@ -1,0 +1,50 @@
+{
+  "total_raw_interactions": 104405,
+  "golden_set_count": 200,
+  "golden_set_ambiguous_count": 26,
+  "quarantined_authors_count": 200,
+  "train_count": 72862,
+  "train_authors_count": 52988,
+  "val_count": 15596,
+  "val_authors_count": 11355,
+  "test_count": 15587,
+  "test_authors_count": 11355,
+  "split_distribution": {
+    "train": {
+      "GENERAL_CHITCHAT_OR_FEEDBACK": 33572,
+      "SOFTWARE_OS_UPDATE": 19120,
+      "BATTERY_AND_POWER": 6441,
+      "CONNECTIVITY_AND_SYNC": 4551,
+      "HARDWARE_AND_AUDIO_SCREEN": 3579,
+      "ACCOUNT_AND_SECURITY": 3151,
+      "BILLING_AND_SUBSCRIPTIONS": 2448
+    },
+    "validation": {
+      "GENERAL_CHITCHAT_OR_FEEDBACK": 7235,
+      "SOFTWARE_OS_UPDATE": 4120,
+      "BATTERY_AND_POWER": 1330,
+      "CONNECTIVITY_AND_SYNC": 977,
+      "HARDWARE_AND_AUDIO_SCREEN": 768,
+      "ACCOUNT_AND_SECURITY": 691,
+      "BILLING_AND_SUBSCRIPTIONS": 475
+    },
+    "test": {
+      "GENERAL_CHITCHAT_OR_FEEDBACK": 7180,
+      "SOFTWARE_OS_UPDATE": 4218,
+      "BATTERY_AND_POWER": 1317,
+      "CONNECTIVITY_AND_SYNC": 995,
+      "HARDWARE_AND_AUDIO_SCREEN": 717,
+      "ACCOUNT_AND_SECURITY": 665,
+      "BILLING_AND_SUBSCRIPTIONS": 495
+    },
+    "golden_set": {
+      "SOFTWARE_OS_UPDATE": 45,
+      "GENERAL_CHITCHAT_OR_FEEDBACK": 45,
+      "BATTERY_AND_POWER": 30,
+      "CONNECTIVITY_AND_SYNC": 25,
+      "ACCOUNT_AND_SECURITY": 20,
+      "HARDWARE_AND_AUDIO_SCREEN": 20,
+      "BILLING_AND_SUBSCRIPTIONS": 15
+    }
+  }
+}

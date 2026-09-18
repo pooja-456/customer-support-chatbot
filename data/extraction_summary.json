@@ -1,0 +1,15 @@
+{
+  "target_brand": "AppleSupport",
+  "total_brand_outbounds_scanned": 106860,
+  "total_parent_tweets_retrieved": 106625,
+  "usable_interactions_extracted": 104405,
+  "duplicates_removed": 35,
+  "short_skipped": 2206,
+  "thread_lengths": {
+    "3+_turns (Follow-up Thread)": 29870,
+    "2_turns (Initial Q&A)": 74535
+  },
+  "csv_output": "C:\\Users\\itsme\\OneDrive\\Documents\\pinnacle intern\\task4\\data\\applesupport_interactions.csv",
+  "jsonl_output": "C:\\Users\\itsme\\OneDrive\\Documents\\pinnacle intern\\task4\\data\\applesupport_conversations.jsonl",
+  "elapsed_seconds": 38.9
+}

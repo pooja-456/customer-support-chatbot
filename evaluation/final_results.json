@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "artifact_verified": true,
+    "discrepancies_documented": true,
+    "note": "All numbers below are derived directly from the JSON/CSV evaluation artifacts. Where a discrepancy existed between an earlier prose summary and the artifact, the artifact value is used and the correction is logged."
+  },
+  "discrepancies_found": [
+    {
+      "metric": "Stage 6 Relevance",
+      "previously_stated_in_summary": 2.11,
+      "artifact_derived_value": 4.0,
+      "explanation": "The 2.11/5 value appeared in Stage 6 prose output and was computed from the first heuristic pass that used a binary length check (relevance=4 if len>20 else 2). The re-run of stage6_evaluate.py with the fixed script assigned relevance=4 to every AUTO_HANDLE response because all deterministic outputs exceed 20 characters. The artifact (stage6_response_results.json) records 4.00. The prior 2.11 was from an earlier draft and is NOT in any persisted JSON artifact. The artifact value 4.00 is authoritative."
+    },
+    {
+      "metric": "Stage 6 Historical Grounding",
+      "previously_stated_in_summary": 4.88,
+      "artifact_derived_value": 5.0,
+      "explanation": "The script assigns grounding=5 when the response matches the dominant action and grounding=3 only when a fallback DM path is used. The re-run shows 100% action match, yielding 5.00. The 4.88 appeared in a Stage 6 prose estimate that was later superseded by the actual run."
+    },
+    {
+      "metric": "Stage 6 Action Match %",
+      "previously_stated_in_summary": 93.9,
+      "artifact_derived_value": 100.0,
+      "explanation": "The current script classifies fallback DM responses as a match when the extracted action is routes_to_dm. 100% match is therefore correct for the deterministic template which always matches. 93.9% was an estimate from a partial manual inspection."
+    },
+    {
+      "metric": "Stage 6 Mean Response Length (words)",
+      "previously_stated_in_summary": 19.5,
+      "artifact_derived_value": 21.8,
+      "explanation": "Artifact shows 21.8; the 19.5 was an informal approximation."
+    }
+  ],
+  "baseline_1_legacy_bot": {
+    "description": "Legacy difflib fuzzy matching + static SaaS keywords (Chatbot_Task4/chatbot/core.py)",
+    "golden_accuracy": 0.22,
+    "golden_macro_f1": 0.1286,
+    "golden_set_size": 200,
+    "auto_handle_rate": "N/A",
+    "escalation_rate": "N/A",
+    "valid_automation_rate": "N/A",
+    "valid_escalation_rate": "N/A",
+    "false_automation_proxy_rate": "N/A",
+    "semantic_relevance": "N/A \u2014 not independently measured",
+    "semantic_grounding": "N/A \u2014 not independently measured",
+    "semantic_actionability": "N/A \u2014 not independently measured",
+    "semantic_tone": "N/A \u2014 not independently measured",
+    "llm_evaluation_status": "NOT EXECUTED",
+    "human_agreement_status": "NOT MEASURED"
+  },
+  "baseline_2_tfidf_lr": {
+    "description": "TfidfVectorizer(ngram(1,2), 15k) + LogisticRegression(balanced, C=2.0)",
+    "golden_accuracy": 0.98,
+    "golden_macro_f1": 0.9771,
+    "test_accuracy": 0.9851,
+    "test_macro_f1": 0.9739,
+    "golden_set_size": 200,
+    "auto_handle_rate": "N/A",
+    "escalation_rate": "N/A",
+    "valid_automation_rate": "N/A",
+    "valid_escalation_rate": "N/A",
+    "false_automation_proxy_rate": "N/A",
+    "semantic_relevance": "N/A \u2014 not independently measured",
+    "semantic_grounding": "N/A \u2014 not independently measured",
+    "semantic_actionability": "N/A \u2014 not independently measured",
+    "semantic_tone": "N/A \u2014 not independently measured",
+    "llm_evaluation_status": "NOT EXECUTED",
+    "human_agreement_status": "NOT MEASURED"
+  },
+  "stage_5_trust_aware_pipeline": {
+    "description": "Full pipeline: Intent \u2192 Retrieval \u2192 Extraction \u2192 Trust \u2192 Generation",
+    "intent_accuracy": 0.98,
+    "normal_cases": 174,
+    "boundary_cases": 26,
+    "golden_set_size": 200,
+    "auto_handle_rate": 0.57,
+    "escalation_rate": 0.43,
+    "valid_automation_rate": 0.51,
+    "valid_escalation_rate": 0.205,
+    "conservative_escalation_rate": 0.225,
+    "proxy_label_caveat": "Escalation ground truth derived from proxy labels (high-risk intents + ambiguity flags). Not validated human labels.",
+    "false_automation_proxy_rate": 0.06,
+    "semantic_relevance": "N/A \u2014 not independently measured",
+    "semantic_grounding": "N/A \u2014 not independently measured",
+    "semantic_actionability": "N/A \u2014 not independently measured",
+    "semantic_tone": "N/A \u2014 not independently measured",
+    "llm_evaluation_status": "NOT EXECUTED",
+    "human_agreement_status": "NOT MEASURED"
+  },
+  "stage_6_deterministic_generator": {
+    "description": "Template-based generator strictly bound to extracted historical action",
+    "auto_handle_cases_evaluated": 114,
+    "actionable_step_pct": 100.0,
+    "mean_response_length_words": 21.8,
+    "semantic_relevance": "N/A \u2014 not independently measured",
+    "semantic_grounding": "N/A \u2014 not independently measured",
+    "semantic_actionability": "N/A \u2014 not independently measured",
+    "semantic_tone": "N/A \u2014 not independently measured",
+    "llm_evaluation_status": "NOT EXECUTED",
+    "human_agreement_status": "NOT MEASURED",
+    "action_adherence_proxy_pct": "N/A",
+    "template_construction_safety": "Because the deterministic generator uses fixed templates, it does not dynamically generate novel factual claims. This is a construction property, not a semantic hallucination evaluation."
+  },
+  "stage_7_llm_generator": {
+    "description": "Model-agnostic LLM generator behind BaseGenerator interface",
+    "experiment_status": "NOT EXECUTED \u2014 API KEY UNAVAILABLE",
+    "safety_violations_detected": {
+      "action_mismatch": 0,
+      "excessively_long": 0,
+      "hallucinated_url": 0,
+      "generated_when_escalated": 0
+    },
+    "llm_as_judge": "NOT EXECUTED",
+    "human_agreement": "NOT MEASURED",
+    "semantic_relevance": "N/A \u2014 not independently measured",
+    "semantic_grounding": "N/A \u2014 not independently measured",
+    "semantic_actionability": "N/A \u2014 not independently measured",
+    "semantic_tone": "N/A \u2014 not independently measured",
+    "llm_evaluation_status": "NOT EXECUTED",
+    "human_agreement_status": "NOT MEASURED"
+  }
+}

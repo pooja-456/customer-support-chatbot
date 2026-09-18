@@ -1,0 +1,20 @@
+{
+  "total_evaluated": 114,
+  "rubric_averages": {
+    "relevance": 4.0,
+    "historical_grounding": 5.0,
+    "actionability": 5.0,
+    "unsupported_claims_safety": 5.0,
+    "tone": 5.0
+  },
+  "percentages": {
+    "unsupported_claims_pct": 0.0,
+    "matches_dominant_action_pct": 100.0,
+    "provides_actionable_step_pct": 100.0
+  },
+  "length_stats": {
+    "mean_words": 21.771929824561404,
+    "min_words": 20,
+    "max_words": 24
+  }
+}

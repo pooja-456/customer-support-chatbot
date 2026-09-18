@@ -1,2 +1,13 @@
+﻿.env
+.env.*
 __pycache__/
 *.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+*.log
+data/splits/retriever_cache.pkl
+data/*.jsonl
+data/*.csv
+twcs.csv

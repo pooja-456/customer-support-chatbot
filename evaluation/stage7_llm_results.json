@@ -1,0 +1,11 @@
+{
+  "llm_experiment_executed": false,
+  "total_cases": 200,
+  "auto_handled": 114,
+  "safety_violations": {
+    "action_mismatch": 0,
+    "excessively_long": 0,
+    "hallucinated_url": 0,
+    "generated_when_escalated": 0
+  }
+}
