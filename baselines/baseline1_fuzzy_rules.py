@@ -5,7 +5,7 @@ This wrapper preserves and exposes the exact, unmodified legacy chatbot logic
 from `Chatbot_Task4/chatbot/core.py` (which uses difflib.SequenceMatcher with a 0.8
 threshold and static keyword fallbacks into 4 categories).
 
-It serves as the mandatory TRIVIAL BASELINE for the Hiver assignment.
+It serves as the mandatory TRIVIAL BASELINE .
 No new AppleSupport data is used to improve this baseline, ensuring an honest,
 unbiased representation of the old system's performance.
 """

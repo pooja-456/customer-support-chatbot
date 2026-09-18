@@ -197,7 +197,7 @@ def generate_comparison_markdown(results, report_path):
 
     lines = []
     lines.append("# Baseline Benchmark & Comparison Report")
-    lines.append("## Stage 3 Deliverable for Hiver SDE Intern Take-Home Assignment\n")
+    lines.append("## Stage 3 Deliverable for Intent Analysis Report\n")
     lines.append("> **Objective**: Establish rigorous, honest performance baselines on both the 15,587-sample Test split and the 200-sample hand-labelled Golden Evaluation Set before introducing the main AI Trust-Aware Agent.\n")
 
     lines.append("### 1. High-Level Performance Comparison\n")

@@ -256,7 +256,7 @@ def main():
 
 def write_labeling_guide(guide_path):
     content = """# Golden Evaluation Set Labeling Guide & Boundary Rules
-## AppleSupport 7-Class Intent Taxonomy for Hiver SDE Intern Assignment
+## AppleSupport 7-Class Intent Taxonomy for Customer Support Intent Taxonomy
 
 ### Overview
 This document defines the boundary rules used to assign intent labels to the **200-example Golden Evaluation Set** ([golden_set.csv](golden_set.csv)). The goal is to provide an objective, independently reviewable standard for human evaluation and LLM-as-a-judge comparison.

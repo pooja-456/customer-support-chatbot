@@ -1,5 +1,5 @@
 # Baseline Benchmark & Comparison Report
-## Stage 3 Deliverable for Hiver SDE Intern Take-Home Assignment
+## Stage 3 Deliverable for Intent Analysis Report
 
 > **Objective**: Establish rigorous, honest performance baselines on both the 15,587-sample Test split and the 200-sample hand-labelled Golden Evaluation Set before introducing the main AI Trust-Aware Agent.
 

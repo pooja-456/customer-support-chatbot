@@ -1,7 +1,7 @@
 # AppleSupport Conversation Analysis & Data-Derived Intent Taxonomy
-## Stage 2 Deliverable for Hiver SDE Intern Take-Home Assignment
+## Stage 2 Deliverable for Intent Analysis Report
 
-> **Hiver Assignment Mandate**: *"Analyze the actual AppleSupport conversations to discover recurring customer problems. Do not simply use a predefined Apple-specific intent list. The intent taxonomy must emerge from the observed data."*
+> **Design Principle**: *"Analyze the actual AppleSupport conversations to discover recurring customer problems. Do not simply use a predefined Apple-specific intent list. The intent taxonomy must emerge from the observed data."*
 
 ### 1. Inbound vs Outbound Distribution & Conversation Length
 - **Total Reconstructed Interactions**: 104,405

@@ -1,4 +1,4 @@
-﻿.env
+.env
 .env.*
 __pycache__/
 *.pyc
@@ -8,6 +8,7 @@ venv/
 .idea/
 *.log
 data/splits/retriever_cache.pkl
+data/splits/*.csv
 data/*.jsonl
 data/*.csv
 twcs.csv

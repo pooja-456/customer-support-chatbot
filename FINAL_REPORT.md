@@ -1,12 +1,12 @@
 # Trust-Aware Customer Support Agent
 
 ## 1. Problem Framing
-The customer support automation problem is fundamentally about trust. Customers on Twitter/X express noisy, informal, and complex multi-turn issues. We selected the **AppleSupport** dataset because empirical profiling revealed a massive volume of outbound replies (106k), a highly actionable interaction rate (89.6%), and a low deflection rate (1.5%). However, simply predicting an intent is insufficient. The agent must know *what historical resolution* applies and, crucially, *when it does not have enough evidence to safely automate*.
+The customer support automation problem is fundamentally about trust. Customers on social platforms express noisy, informal, and complex multi-turn issues. We selected the **AppleSupport** dataset because empirical profiling revealed a massive volume of outbound replies (106k), a highly actionable interaction rate (89.6%), and a low deflection rate (1.5%). However, simply predicting an intent is insufficient. The agent must know *what historical resolution* applies and, crucially, *when it does not have enough evidence to safely automate*.
 
 ## 2. What "Good" Means
 In this project, "Good" means:
 - **Correct Intent**: Routing the customer to the correct domain (e.g. Battery vs Software).
-- **Evidence-Backed Resolution**: Only suggesting actions (links, DMs, restarts) that Apple agents historically took.
+- **Evidence-Backed Resolution**: Only suggesting actions (links, DMs, restarts) that human agents historically took.
 - **Useful Response**: Providing actionable next steps.
 - **No Unsupported Claims**: Zero hallucinations of policies, refunds, or false guarantees.
 - **Appropriate Automation/Escalation**: Escalating to a human when the request is high-risk, ambiguous, or lacks consistent historical precedent.
@@ -14,24 +14,18 @@ In this project, "Good" means:
 ## 3. System Architecture
 ```text
 [Customer Query]
-       │
-       ▼
+       ↓
 [Intent Classification] (TF-IDF + Logistic Regression)
-       │
-       ▼
+       ↓
 [Historical Evidence Retrieval] (TF-IDF + Cosine Similarity on Training Set)
-       │
-       ▼
+       ↓
 [Resolution / Action Extraction] (Regex heuristics on retrieved brand text)
-       │
-       ▼
+       ↓
 [Trust / Risk Layer] (Evaluates confidence, similarity, consistency, risk)
-       │
-  ┌────┴────┐
-  ▼         ▼
-[ESCALATE] [AUTO-HANDLE]
-            │
-            ▼
+       ↓
+  ┌────────┴────────┐
+[ESCALATE]    [AUTO-HANDLE]
+                  ↓
    [Response Generation] (Deterministic Templates / Optional LLM)
 ```
 
@@ -46,6 +40,7 @@ In this project, "Good" means:
 We preserved the existing Tkinter Chatbot logic as our Legacy Rule Bot baseline.
 - **Legacy Rule Bot**: 22.00% Accuracy | 0.1286 Macro-F1
 - **TF-IDF + Logistic Regression**: 98.00% Accuracy | 0.9771 Macro-F1
+
 The massive jump in performance proves the classical ML approach effectively solved the routing problem without requiring deep learning at this stage.
 
 ## 6. Trust-Aware Pipeline Results
@@ -53,7 +48,7 @@ Running the 200 Golden Set examples through the full Trust-Aware Pipeline yielde
 - **Intent Accuracy**: 98.00%
 - **Auto-handled**: 57.0%
 - **Escalated**: 43.0%
-- **False Automation Proxy Rate**: 6.0% (Critical safety failure against proxy labels)
+- **False Automation Proxy Rate**: 6.0% (Critical safety failure measured against proxy labels)
 - **Valid Automation**: 51.0%
 - **Valid Escalation**: 20.5%
 - **Conservative Escalation**: 22.5%
@@ -91,23 +86,21 @@ From the `evaluation/final_failure_analysis.md`:
 5. **High-Risk Blanket Policy**: Unconditionally escalating simple password reset queries due to the Billing/Account policy.
 
 ## 10. What Is Missing About the Headline Number?
-98% Intent Accuracy does not mean 98% effective support. Intent correctness does not equal response correctness or historical grounding. The classifier is just a router. True effectiveness relies on the Trust Layer (currently using uncalibrated heuristics) and the Response Generator (currently outputting generic 2.11/5 relevance templates).
+98% Intent Accuracy does not mean 98% effective support. Intent correctness does not equal response correctness or historical grounding. The classifier is just a router. True effectiveness relies on the Trust Layer (currently using uncalibrated heuristics) and the Response Generator.
 
 ## 11. What We Did NOT Build
-The following were intentionally out of scope for the take-home assignment:
+The following were intentionally out of scope for this project phase:
 - **Production Deployment / AWS Infrastructure**: Focused purely on algorithmic and pipeline logic.
-- **Real-Time Twitter Ingestion**: Focused on historical dataset processing.
+- **Real-Time Social Ingestion**: Focused on historical dataset processing.
 - **Fully Calibrated Trust Thresholds**: Used educated heuristics (0.35 sim, 0.60 consistency) rather than validation-set grid search.
 - **Human-Validated Escalation Labels**: Relied on proxy labels.
-- **Completed LLM vs Deterministic Benchmark**: Bypassed due to missing API keys.
-- **External URL Resolution**: Links remain as `t.co`.
+- **External URL Resolution**: Links remain as opaque short-urls.
 
-## 12. One More Week
-If given one more week, the prioritized plan would be:
+## 12. Future Work
 1. Collect human response-quality labels using the generated annotation template.
 2. Run the controlled LLM generation experiment by supplying API credentials.
 3. Measure LLM judge vs human agreement to establish an automated evaluation loop.
 4. Calibrate the Trust Layer thresholds on the Validation split.
 5. Improve resolution extraction (replace regex with a lightweight classifier).
-6. Resolve/validate historical `t.co` links.
-7. Integrate the finalized pipeline deeply into the Tkinter UI.
+6. Resolve/validate historical links.
+7. Integrate the finalized pipeline deeply into the UI.

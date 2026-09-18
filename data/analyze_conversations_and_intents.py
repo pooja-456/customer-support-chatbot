@@ -315,9 +315,9 @@ def generate_analysis_report(df, taxonomy, stats, report_path):
     """Compile comprehensive markdown report covering all Stage 2 requirements."""
     lines = []
     lines.append("# AppleSupport Conversation Analysis & Data-Derived Intent Taxonomy")
-    lines.append("## Stage 2 Deliverable for Hiver SDE Intern Take-Home Assignment\n")
+    lines.append("## Stage 2 Deliverable for Intent Analysis Report\n")
 
-    lines.append("> **Hiver Assignment Mandate**: *\"Analyze the actual AppleSupport conversations to discover recurring customer problems. Do not simply use a predefined Apple-specific intent list. The intent taxonomy must emerge from the observed data.\"*\n")
+    lines.append("> **Design Principle**: *\"Analyze the actual AppleSupport conversations to discover recurring customer problems. Do not simply use a predefined Apple-specific intent list. The intent taxonomy must emerge from the observed data.\"*\n")
 
     # Section 1: Inbound vs Outbound & Volume
     lines.append("### 1. Inbound vs Outbound Distribution & Conversation Length")
